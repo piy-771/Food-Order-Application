@@ -1,18 +1,15 @@
-import backgroundImage from './images/orderback.jpg';
-//import Image from 'react-bootstrap/Image';
-import Card from 'react-bootstrap/Card';
-//import { Container } from 'react-bootstrap';
-import { useState } from 'react';
-import './css/Order.css'
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { Select } from 'flowbite-react';
+import Card from 'react-bootstrap/Card';
+import backgroundImage from './images/orderback.jpg';
+import { useState,useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { message } from 'antd';
+import { message } from "antd";
+import Button from 'react-bootstrap/Button';
 
+const EditOrder=()=>{
 
-const Order =()=>{
-   // State to hold the selected option from the first input
+     // State to hold the selected option from the first input
    const [firstInputValue, setFirstInputValue] = useState("");
    // State to hold the options for the second input
    const [secondInputOptions, setSecondInputOptions] = useState([]);
@@ -30,6 +27,8 @@ const [secondInputValue, setSecondInputValue] = useState("");
      Desserts: ["Classuc Nut Tart", "Fried Ice Cream", "Vanilla Creme Brilee","Fruit Assortment"],
      Drinks: ["Strawbery Daiquiri", "Singapore Sling", "Innocent Mojito","Ginger & Lemon Tea"]
    };
+
+   const {myid} = useParams();
 
    // Handler for first input change
   const handleFirstInputChange = (event) => {
@@ -51,6 +50,18 @@ const [secondInputValue, setSecondInputValue] = useState("");
     setInput((values) => ({...values,foodtype:selectedValue}));
   }
 
+  const loadData=()=>{
+    let api=`http://localhost:3000/orders/${myid}`;
+    axios.get(api).then((res)=>{
+      console.log(res.data);
+      setInput(res.data);
+    })
+  }
+
+  useEffect(()=>{
+    loadData();
+}, []);
+
   const [input, setInput]=useState({});
     const handleInput=(e)=>{
         let name=e.target.name;
@@ -60,23 +71,33 @@ const [secondInputValue, setSecondInputValue] = useState("");
     }
 
 
-    const handleSubmit=()=>{
-      let api="http://localhost:3000/orders";
+    const handleSubmit=(e)=>{
+            e.preventDefault();
+
+      let api=`http://localhost:3000/orders/${myid}`;
      
-      axios.post(api,input).then((res)=>{
+      axios.put(api,input).then((res)=>{
           console.log(res);
-          message.success("Data Successfully Save!!!")
+          message.success("Data Successfully Updated!!!");
+          setInput({
+            food:"",
+            foodtype:"",
+            quantity:"",
+            address:""
+          })
       })
      }
+
+
     return(
         <>
-         <Card className="bg-dark text-white justify-content-center">
+            <Card className="bg-dark text-white justify-content-center">
       <img src={backgroundImage}  alt="" />
       <Card.ImgOverlay   style={{background: "rgba(0, 0, 0, 0.4)"}}>
      
         
       <div  className='maindiv-form'>
-                <h1>MAKE YOUR ORDER</h1>
+                <h1>UPDATE YOUR ORDER</h1>
                 <Form >
                 <Form.Group className='mb-3' controlId='exampleForm.ControInput1'>
                     <Form.Label>Food</Form.Label>
@@ -97,7 +118,7 @@ const [secondInputValue, setSecondInputValue] = useState("");
                 {firstInputValue && (
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                   <Form.Label>Choice</Form.Label>
-                  <Form.Control  as={Select} name="foodtype" onChange={handleSecondInputChange} value={secondInputValue}>
+                  <Form.Control  as={"select"} name="foodtype" onChange={handleSecondInputChange} value={secondInputValue}>
                   <option value="">--Select--</option>
                   {secondInputOptions.map((option) => (
                         <option key={option} value={option}>
@@ -121,7 +142,7 @@ const [secondInputValue, setSecondInputValue] = useState("");
             <Form.Control  type="text"  name="address" onChange={handleInput}  />
       </Form.Group>
       <div className='text-center' >
-    <Button style={{ background: "#ECB132",fontSize:"20px"}} onClick={handleSubmit}>ORDER</Button>
+    <Button  variant="outline-warning" onClick={handleSubmit} size='lg'>UPDATE</Button>
     
     
     </div>
@@ -134,4 +155,4 @@ const [secondInputValue, setSecondInputValue] = useState("");
     )
 }
 
-export default Order;
+export default EditOrder;

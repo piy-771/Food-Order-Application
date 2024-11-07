@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.card-img-overlay{
+    display: flex;
+    justify-content: center;
+   padding-top: 100px;
+}
+
+.maindiv-form{
+    background-color: white;
+    width: 55%;
+    border-radius: 1%;
+    height: 65vh;
+    color:black;
+    h1{
+        text-align: center;
+        color: #ECB132;
+    }
+}
+.mb-3{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: larger;
+}
+

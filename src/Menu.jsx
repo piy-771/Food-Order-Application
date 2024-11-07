@@ -14,7 +14,6 @@ import salad2 from './images/salad2.jpg'
 import salad3 from './images/salad3.jpg'
 import salad4 from './images/salad4.jpg'
 import dessert1 from './images/dessert1.jpg'
-import dessert2 from './images/dessert2.jpg'
 import dessert3 from './images/dessert3.jpg'
 import dessert4 from './images/dessert4.jpg'
 import drink1 from './images/drink1.jpg'
@@ -22,7 +21,12 @@ import drink2 from './images/drink2.jpg'
 import drink3 from './images/drink3.jpg'
 import drink4 from './images/drink4.jpg'
 import Button from 'react-bootstrap/Button';
+import {useNavigate } from 'react-router-dom';
 const Menu =()=>{
+  const navigate = useNavigate();
+  const fun1=()=>{
+    navigate(`/order`)
+  }
     return(
         <>
          <Card className="bg-dark text-white">
@@ -43,7 +47,7 @@ const Menu =()=>{
         <Card.Text>
           With garlic, capers, chili, fennel, parsley
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button variant="warning"  onClick={fun1}>Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -53,7 +57,7 @@ const Menu =()=>{
         <Card.Text>
           With rocket salad,pickels, and cheddar
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button variant="warning"  onClick={fun1}>Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -63,7 +67,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,cheddar, and mustard
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button variant="warning"  onClick={fun1}>Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -73,7 +77,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,pickels,salad and bacon
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button variant="warning"  onClick={fun1}>Order</Button>
       </Card.Body>
     </Card>
           </Container>
@@ -90,7 +94,7 @@ const Menu =()=>{
         <Card.Text>
           With garlic, capers, chili, fennel, parsley
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button variant="warning"  onClick={fun1}>Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -100,7 +104,7 @@ const Menu =()=>{
         <Card.Text>
           With rocket salad,pickels, and cheddar
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -110,7 +114,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,cheddar, and mustard
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -120,7 +124,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,pickels,salad and bacon
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button   onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
           </Container>
@@ -139,7 +143,7 @@ const Menu =()=>{
         <Card.Text>
           With anchovy sauce, capers, parsley
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button   onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -149,7 +153,7 @@ const Menu =()=>{
         <Card.Text>
           With rocket salad,pickels, and cheddar
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -159,7 +163,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,cheddar, and mustard
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -169,7 +173,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,pickels,salad and bacon
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button   onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
           </Container>
@@ -186,7 +190,7 @@ const Menu =()=>{
         <Card.Text>
           With anchovy sauce, capers, parsley
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -196,7 +200,7 @@ const Menu =()=>{
         <Card.Text>
           With rocket salad,pickels, and cheddar
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -206,7 +210,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,cheddar, and mustard
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -216,7 +220,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,pickels,salad and bacon
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
           </Container>
@@ -233,7 +237,7 @@ const Menu =()=>{
         <Card.Text>
           With anchovy sauce, capers, parsley
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -243,7 +247,7 @@ const Menu =()=>{
         <Card.Text>
           With rocket salad,pickels, and cheddar
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -253,7 +257,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,cheddar, and mustard
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
@@ -263,7 +267,7 @@ const Menu =()=>{
         <Card.Text>
           With onion,pickels,salad and bacon
         </Card.Text>
-        <Button variant="warning">Order</Button>
+        <Button  onClick={fun1} variant="warning">Order</Button>
       </Card.Body>
     </Card>
           </Container>
