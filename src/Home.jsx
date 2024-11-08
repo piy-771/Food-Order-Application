@@ -1,9 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
-import img1 from './images/img1.jpg'
+// import img1 from './images/img1.jpg'
 //import img2 from './images/img2.jpg'
-import img3 from './images/img3.jpg'
+//import img3 from './images/img3.jpg'
 //import img4 from './images/img4.jpg'
-import img5 from './images/img5.jpg'
+//import img5 from './images/img5.jpg'
 import { useState } from 'react';
 import './css/Home.css'
 import Button from 'react-bootstrap/Button';
@@ -24,9 +24,11 @@ const Home=()=>{
         <>
         <div className='hero'>
         <Carousel fade  activeIndex={index} onSelect={handleSelect} >
-      <Carousel.Item>
-        <img src={img3} alt="" width={"100%"} height={"600vh"} />
-        <Carousel.Caption >
+      <Carousel.Item >
+        <img alt="" width={"100%"} height={"600vh"} style={{background
+          :"rgba(0,0,0,0.4)"
+        }} />
+        <Carousel.Caption  >
           <h1>ORDER FOOD DELIVERY</h1>
           <p>From Your Favorite Restaurants!</p>
           <div className='button'>
@@ -35,7 +37,7 @@ const Home=()=>{
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-       <img src={img1} alt="" width={"100%"} height={"600vh"} />
+       <img  alt="" width={"100%"} height={"600vh"} />
         <Carousel.Caption>
           <h1>ORDER TAKEAWAY ONLINE</h1>
           <p>From Your Favorite Restaurants!</p>
@@ -45,7 +47,7 @@ const Home=()=>{
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={img5} alt="" width={"100%"} height={"600vh"} />
+        <img  alt="" width={"100%"} height={"600vh"} />
         <Carousel.Caption>
           <h1>WE GET WHAT YOU LOVE</h1>
           <p>

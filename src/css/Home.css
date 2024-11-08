@@ -38,9 +38,33 @@
     /* z-index: 10;  */
 
 
- /* .hero *{
-    z-index: 200;
-}   */ */
+ .hero {
+   background-image: linear-gradient(
+    to right,
+    rgba(166, 151, 151, 0.05),
+    rgba(82, 79, 79, 0.8)
+   ),
+   url(../images/img1.jpg);
+   background-size: cover;
+
+   background-image: linear-gradient(
+    to right,
+    rgba(166, 151, 151, 0.05),
+    rgba(52, 49, 49, 0.8)
+   ),
+   url(../images/img5.jpg);
+   background-size: cover; background-image: linear-gradient(
+    to right,
+    rgba(166, 151, 151, 0.05),
+    rgba(41, 40, 40, 0.8)
+   ),
+   url(../images/img3.jpg);
+   background-size: cover;
+  
+  
+
+  
+}   
 
 /* .card{
     display: flex;
@@ -50,8 +74,9 @@
 } */
 .overlay{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+   
  }
+
 
 
 

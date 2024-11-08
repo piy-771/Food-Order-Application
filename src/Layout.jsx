@@ -21,9 +21,34 @@ const Layout=()=>{
         </Container>
       </Navbar>
       <Outlet/>
+      <footer>
+      <footer style={styles.footer}>
+      <p style={styles.text}>
+        © {new Date().getFullYear()} Event Planner. All rights reserved.
+      </p>
+    </footer>
+      </footer>
         
         </>
     )
 }
+
+
+const styles = {
+  footer: {
+    backgroundColor: '#000', // Black background
+    color: '#fff', // White text
+    padding: '10px 20px',
+    textAlign: 'center',
+    marginTop:"50px",
+    
+    left: '0',
+    bottom: '0',
+    width: '100%',
+  },
+  text: {
+    margin: 0,
+  },
+};
 
 export default Layout;

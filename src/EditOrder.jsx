@@ -60,7 +60,7 @@ const [secondInputValue, setSecondInputValue] = useState("");
 
   useEffect(()=>{
     loadData();
-}, []);
+},[]);
 
   const [input, setInput]=useState({});
     const handleInput=(e)=>{
