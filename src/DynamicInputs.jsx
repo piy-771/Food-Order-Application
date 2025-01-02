@@ -16,6 +16,8 @@ const DynamicInputs=()=>{
     Animals: ["Cat", "Dog", "Elephant"]
   };
 
+  //changes
+
   // Handler for first input change
   const handleFirstInputChange = (event) => {
     const selectedValue = event.target.value;
